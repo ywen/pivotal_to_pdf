@@ -11,3 +11,5 @@ project_id: your-ptroject-id
 After install the gem, type pivotal_to_pdf your-story-id
 
 The gem will then read the story and print it into a PDF
+
+The gem assumes that you have https access to the pivotal tracker
