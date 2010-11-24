@@ -1,0 +1,13 @@
+This is a gem that can read a story from pivotal tracker and print into a 4x6 card so that you can print the card and stick to your physical story board.
+
+==USAGE
+First you need to create a .pivotal.yml under your home directory. No idea how you do this under Windows so no support to Windows yet
+
+a sample .pivotal.yml:
+
+token: your-api-token-of-pivotal-tracker
+project_id: your-ptroject-id
+
+After install the gem, type pivotal_to_pdf your-story-id
+
+The gem will then read the story and print it into a PDF
