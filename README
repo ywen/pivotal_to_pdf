@@ -1,5 +1,7 @@
 This is a gem that can read a story from pivotal tracker and print into a 4x6 card so that you can print the card and stick to your physical story board.
 
+I steal the part of code from http://ephemera.karmi.cz/post/622136360/create-printable-pdf-cards-for-your-pivotal-tracker-stor The difference is the code there print to a A4 paper with 4 stories on it. This gem prints one card at a time and the gem doesn't require an exported csv file.
+ 
 ==INSTALL
 [sudo] gem install pivotal_to_pdf
 
