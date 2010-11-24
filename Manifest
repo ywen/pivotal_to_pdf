@@ -1,5 +1,6 @@
 CHANGELOG
 Manifest
+README
 Rakefile
 bin/pivol_to_pdf
 lib/pivotal_to_pdf.rb
