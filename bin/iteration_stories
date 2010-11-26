@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
+require 'pivotal_to_pdf'
+p Iteration.find(:all, :params => {:group => "current"})

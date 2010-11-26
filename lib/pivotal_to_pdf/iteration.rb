@@ -1,3 +1,3 @@
-class Iteration
+class Iteration < Pivotal
   
 end
