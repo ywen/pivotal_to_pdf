@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'rainbow'
 require 'active_resource'
+require 'pivotal_to_pdf/pivotal'
+require 'pivotal_to_pdf/iteration'
 require 'pivotal_to_pdf/story'
 require 'pivotal_to_pdf/pdf_writer'
 class PivotalToPdf
