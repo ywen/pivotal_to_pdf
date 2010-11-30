@@ -14,12 +14,12 @@ First you need to create a .pivotal.yml under your home directory. No idea how y
 
 a sample .pivotal.yml:
 
-token: your-api-token-of-pivotal-tracker
-project_id: your-ptroject-id
+* token: your-api-token-of-pivotal-tracker
+* project_id: your-ptroject-id
 
 After install the gem, you can do:
-  * pivotal_to_pdf iteration       # print stories for the current iteration into a PDF file
-  * pivotal_to_pdf story STORY_ID  # print a single story specifed by ID into a PDF file
+* pivotal_to_pdf iteration       # print stories for the current iteration into a PDF file
+* pivotal_to_pdf story STORY_ID  # print a single story specifed by ID into a PDF file
 
 
 The gem will then read the story/stories and print it into a PDF file
