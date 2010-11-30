@@ -9,7 +9,7 @@ class PivotalToPdfApp < Thor
     PivotalToPdf.story story_id
   end
 
-  desc "iteration ITERATION_NUMBER", "print stores for an iteration specifed by number into a PDF file (defaut to the current iteration)"
+  desc "iteration", "print stories for the current iteration into a PDF file"
   def iteration(iteration_number = "current")
     PivotalToPdf.iteration iteration_number
   end
