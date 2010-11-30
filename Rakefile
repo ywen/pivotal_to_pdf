@@ -1,4 +1,5 @@
 require 'echoe'
+require File.expand_path(File.dirname(__FILE__))+'/tasks/spec'
 Echoe.new('pivotal_to_pdf') do |p|
   p.description    = "Convert Pivotal Tracker Stories to 4x6 PDF for printing so that you can stick the card to your story board"
   p.summary = "Convert Pivotal Tracker Stories to 4x6 PDF for printing"
