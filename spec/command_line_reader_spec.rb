@@ -6,8 +6,12 @@ describe CommandLineReader do
     @command_line_reader = CommandLineReader.new
   end
 
-  it "should list available options if passed in -h" do
+  it "should list available options if passed in -s" do
+    command_line_reader.options("-s123").should == {:story => "123"}
+  end
 
+  it "should list available options if passed in -h" do
+    lambda{command_line_reader.options("-h")}.should raise_error(SystemExit)
   end
 end
 
