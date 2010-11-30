@@ -12,5 +12,11 @@ describe 'PivotalToPdf Bin' do
       PivotalToPdfApp.start(["story"])
     end
   end
+  describe "when pased in iteration sub command" do
+    it "should call iteration" do
+      PivotalToPdf.should_receive(:iteration).with(123)
+      PivotalToPdfApp.start(["iteration", 123])
+    end
+  end
 end
 
