@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 gem 'rainbow'
 gem 'activeresource'
 gem 'prawn'
-gem 'pickled_optparse'
+gem 'thor'
 group :test do
   gem 'rspec'
 end

@@ -1,4 +1,17 @@
 #!/usr/bin/env ruby
 $:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
 require 'pivotal_to_pdf'
-require 'command_line_reader'
+require 'thor'
+
+class PivotalToPdfApp < Thor
+  desc "story STORY_ID", "print a single story specifed by ID into a PDF file"
+  def story(story_id)
+    PivotalToPdf.story story_id
+  end
+
+  desc "iteration ITERATION_NUMBER", "print stores for an iteration specifed by number into a PDF file (defaut to the current iteration)"
+  def iteration(iteration_number = "current")
+  end
+end
+
+PivotalToPdfApp.start
