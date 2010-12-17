@@ -37,7 +37,7 @@ class PdfWriter
 
         pdf.text_box "Points: " + (story.respond_to?(:estimate) ? story.estimate.to_s : "Not yet estimated"),
           :size => 12, :at => [12, 50], :width => width-18
-        pdf.text_box "Owner: " + story.owned_by,
+        pdf.text_box "Owner: " + (story.respond_to?(:owned_by) ? story.owned_by : "None"),
           :size => 8, :at => [12, 18], :width => width-18
 
         pdf.fill_color "999999"
