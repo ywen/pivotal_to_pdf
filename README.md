@@ -26,3 +26,6 @@ After install the gem, you can do:
 The gem will then read the story/stories and print it into a PDF file
 
 The gem assumes that you have https access to the pivotal tracker
+
+##Contributors
+ Yi Wen, Carol Nichols
