@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal_to_pdf}
-  s.version = "0.5"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Yi Wen"]
-  s.date = %q{2010-11-30}
+  s.date = %q{2010-12-16}
   s.default_executable = %q{pivotal_to_pdf}
   s.description = %q{Convert Pivotal Tracker Stories to 4x6 PDF for printing so that you can stick the card to your story board}
   s.email = %q{hayafirst@gmail.com}
