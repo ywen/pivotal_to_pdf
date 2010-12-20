@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal_to_pdf}
-  s.version = "0.5.2"
+  s.version = "0.5.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Yi Wen"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = %q{hayafirst@gmail.com}
   s.executables = ["pivotal_to_pdf"]
   s.extra_rdoc_files = ["CHANGELOG", "README.md", "bin/pivotal_to_pdf", "lib/pivotal_to_pdf.rb", "lib/pivotal_to_pdf/iteration.rb", "lib/pivotal_to_pdf/pdf_writer.rb", "lib/pivotal_to_pdf/pivotal.rb", "lib/pivotal_to_pdf/story.rb", "tasks/spec.rb"]
-  s.files = ["CHANGELOG", "Gemfile", "Gemfile.lock", "Manifest", "README.md", "Rakefile", "bin/pivotal_to_pdf", "lib/pivotal_to_pdf.rb", "lib/pivotal_to_pdf/iteration.rb", "lib/pivotal_to_pdf/pdf_writer.rb", "lib/pivotal_to_pdf/pivotal.rb", "lib/pivotal_to_pdf/story.rb", "pivotal_to_pdf.gemspec", "spec/pivotal_to_pdf_bin_spec.rb", "spec/spec_helper.rb", "spec/story_spec.rb", "tasks/spec.rb"]
+  s.files = ["CHANGELOG", "Gemfile", "Gemfile.lock", "Manifest", "README.md", "Rakefile", "bin/pivotal_to_pdf", "lib/pivotal_to_pdf.rb", "lib/pivotal_to_pdf/iteration.rb", "lib/pivotal_to_pdf/pdf_writer.rb", "lib/pivotal_to_pdf/pivotal.rb", "lib/pivotal_to_pdf/story.rb", "spec/pivotal_to_pdf_bin_spec.rb", "spec/spec_helper.rb", "spec/story_spec.rb", "tasks/spec.rb", "pivotal_to_pdf.gemspec"]
   s.homepage = %q{https://github.com/ywen/pivotal_to_pdf}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Pivotal_to_pdf", "--main", "README.md"]
   s.require_paths = ["lib"]
