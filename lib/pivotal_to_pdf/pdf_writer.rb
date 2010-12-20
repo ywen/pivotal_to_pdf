@@ -29,6 +29,8 @@ class PdfWriter
         # --- Write content
         pdf.bounding_box [pdf.bounds.left+padding, pdf.bounds.top-padding], :width => width do
           pdf.text "#{story.id} - #{story.name}", :size => 14
+          pdf.fill_color "52D017"
+          pdf.text story.label_text, :size => 8
           pdf.text "\n", :size => 14
           pdf.fill_color "444444"
           pdf.text story.description || "", :size => 10
