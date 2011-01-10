@@ -10,7 +10,7 @@ I steal the part of code from http://ephemera.karmi.cz/post/622136360/create-pri
   $ [sudo] gem install pivotal_to_pdf
 
 ## USAGE
-First you need to create a .pivotal.yml under your home directory. No idea how you do this under Windows so no support to Windows yet
+First you need to create a .pivotal.yml under your home directory. On windows, have this file in %HOME%.pivotal.yml
 
 a sample .pivotal.yml:
 
