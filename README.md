@@ -25,6 +25,7 @@ After install the gem, you can do:
 The gem will then read the story/stories and print it into a PDF file
 
 The points section will be printed only for features. Bugs and Chores don't have points
+
 Printed a green bounding box for feature, a yellow box for chores and a red box for bugs
 
 The gem assumes that you have https access to the pivotal tracker
