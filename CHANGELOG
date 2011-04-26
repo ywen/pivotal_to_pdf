@@ -1,3 +1,8 @@
+v0.6
+ * The points section will be printed only for features. Bugs and Chores don't
+ have points
+ * Printed a green bounding box for feature, a yellow box for chores and a red
+ box for bugs
 v0.5.2.1 Fixed a manifest problem
 v0.5.2 Printed labels to the cards
 v0.5.1 minor improvement over printing estimate, owned by
