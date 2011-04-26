@@ -64,4 +64,19 @@ describe Story do
       end
     end
   end
+
+  describe "#story_color" do
+    it "should return green for features" do
+      story.story_type = "feature"
+      story.story_color.should == "52D017"
+    end
+    it "should return red for bugs" do
+      story.story_type = "bug"
+      story.story_color.should == "FF0000"
+    end
+    it "should return yellow for chores" do
+      story.story_type = "chore"
+      story.story_color.should == "FFFF00"
+    end
+  end
 end

@@ -22,8 +22,8 @@ class PdfWriter
       # pdf.start_new_page
 
       stories.each_with_index do |story, index|
-        padding = 12
-        pdf.stroke_color = "666666"
+        padding = 10
+        pdf.stroke_color = story.story_color
         pdf.stroke_bounds
         width = 370
         # --- Write content
