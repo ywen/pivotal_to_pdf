@@ -46,7 +46,7 @@ class PdfWriter
         pdf.fill_color "000000"
         pdf.start_new_page unless index == stories.size - 1
       end
-      pdf.number_pages "<page>/<total>", [pdf.bounds.right-16, -28]
+      pdf.number_pages "<page>/<total>", {:at => [pdf.bounds.right - 16, -28]}
 
       puts ">>> Generated PDF file in '#{story_or_iteration.id}.pdf'".foreground(:green)
   end
