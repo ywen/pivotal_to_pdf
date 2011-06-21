@@ -26,6 +26,7 @@ class PdfWriter
         pdf.stroke_color = story.story_color
         pdf.stroke_bounds
         width = 370
+        pdf.line_width=6
         # --- Write content
         pdf.bounding_box [pdf.bounds.left+padding, pdf.bounds.top-padding], :width => width do
           pdf.text story.name, :size => 14
@@ -36,6 +37,8 @@ class PdfWriter
           pdf.text story.description || "", :size => 10
           pdf.fill_color "000000"
         end
+        pdf.line(pdf.bounds.bottom_left, pdf.bounds.bottom_right)
+        pdf.stroke_bounds 
 
         pdf.text_box story.points, :size => 12, :at => [12, 50], :width => width-18 unless story.points.nil?
         pdf.text_box "Owner: " + (story.respond_to?(:owned_by) ? story.owned_by : "None"),

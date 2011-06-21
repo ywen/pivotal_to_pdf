@@ -1,3 +1,5 @@
+v0.7
+  * To support prawn 0.11.1
 v0.6
  * The points section will be printed only for features. Bugs and Chores don't
  have points
