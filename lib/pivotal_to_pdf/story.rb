@@ -18,8 +18,10 @@ class Story < Pivotal
   private
 
   ["feature", "bug", "chore"].each do |type_str|
-    define_method "#{type_str}?".to_sym do
-      self.story_type == type_str
+    class_eval <<-EOS
+      def #{type_str}?
+      self.story_type == "#{type_str}"
     end
+    EOS
   end
 end

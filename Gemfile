@@ -8,5 +8,5 @@ group :test do
 end
 
 group :test, :development do
-  gem 'echoe'
+  gem 'echoe', "4.5.6"
 end
