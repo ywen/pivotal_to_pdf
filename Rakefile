@@ -1,3 +1,4 @@
+require 'psych'
 require 'echoe'
 require File.expand_path(File.dirname(__FILE__))+'/tasks/spec'
 Echoe.new('pivotal_to_pdf') do |p|
