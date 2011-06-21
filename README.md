@@ -31,4 +31,6 @@ Printed a green bounding box for feature, a yellow box for chores and a red box 
 The gem assumes that you have https access to the pivotal tracker
 
 ##Contributors
- Yi Wen, Carol Nichols
+* Yi Wen
+* Carol Nichols
+* Kristian Rasmussen 
