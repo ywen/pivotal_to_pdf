@@ -2,3 +2,4 @@
 *.csv
 *.pdf
 pkg
+.pivotal.yml
