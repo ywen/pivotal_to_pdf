@@ -1,6 +1,8 @@
 pivotal_to_pdf -- print the stories from pivotal tracker to a PDF file
 ====================================
 
+[![Build Status](http://travis-ci.org/ywen/pivotal_to_pdf.png)](http://travis-ci.org/ywen/pivotal_to_pdf)
+
 ## DESCRIPTION
 This is a gem that can read a story from pivotal tracker and print into a 4x6 card so that you can print the card and stick to your physical story board.
 
