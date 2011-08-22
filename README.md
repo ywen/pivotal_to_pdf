@@ -36,3 +36,4 @@ The gem assumes that you have https access to the pivotal tracker
 * Yi Wen
 * Carol Nichols
 * Kristian Rasmussen 
+* [Alastair Mair](https://github.com/amair)
