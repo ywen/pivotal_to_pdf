@@ -13,11 +13,12 @@ class Story < Pivotal
     return "52D017" if feature?
     return "FF0000" if bug?
     return "FFFF00" if chore?
+    return "000000" # For Releases or Unknown type
   end
 
   private
 
-  ["feature", "bug", "chore"].each do |type_str|
+  ["feature", "bug", "chore", "release"].each do |type_str|
     class_eval <<-EOS
       def #{type_str}?
       self.story_type == "#{type_str}"

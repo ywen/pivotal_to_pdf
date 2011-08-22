@@ -30,9 +30,17 @@ describe Story do
   end
 
   describe "#points" do
-    describe "and the story is not a feature" do
+    describe "and the story is a bug" do
       before(:each) do
         story.story_type = "bug"
+      end
+      it "should return nil" do
+        story.points.should be_nil
+      end
+    end
+    describe "and the story is a release" do
+      before(:each) do
+        story.story_type = "release"
       end
       it "should return nil" do
         story.points.should be_nil
@@ -77,6 +85,10 @@ describe Story do
     it "should return yellow for chores" do
       story.story_type = "chore"
       story.story_color.should == "FFFF00"
+    end
+    it "should return black for releases" do
+      story.story_type = "release"
+      story.story_color.should == "000000"
     end
   end
 end
