@@ -1,4 +1,4 @@
-v0.8.1
+v0.8.2
   * Used activeresource 3.0.9. 3.1.0 broke the pivotal API, it seems
 v0.8 
   * Fixed an issue where the gem didn't handle the releases
