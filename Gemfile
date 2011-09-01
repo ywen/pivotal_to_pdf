@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 gem 'rainbow'
-gem 'activeresource'
+gem 'activeresource', "3.0.0"
 gem 'prawn'
 gem 'thor'
 group :test do
