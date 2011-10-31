@@ -1,3 +1,5 @@
-class Iteration < Pivotal
-  
+module PivotalToPdf
+  class Iteration < Pivotal
+
+  end
 end

@@ -1,3 +1,6 @@
+v0.9
+  * Added printing support for bold and italic fonts
+  * removed page number. Did not find it really useful
 v0.8.2
   * Used activeresource 3.0.9. 3.1.0 broke the pivotal API, it seems
 v0.8 

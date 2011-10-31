@@ -9,7 +9,9 @@ lib/pivotal_to_pdf.rb
 lib/pivotal_to_pdf/iteration.rb
 lib/pivotal_to_pdf/pdf_writer.rb
 lib/pivotal_to_pdf/pivotal.rb
+lib/pivotal_to_pdf/simple_text_formatter.rb
 lib/pivotal_to_pdf/story.rb
+spec/pivotal_to_pdf/simple_text_formatter_spec.rb
 spec/pivotal_to_pdf/story_spec.rb
 spec/pivotal_to_pdf_bin_spec.rb
 spec/spec_helper.rb
