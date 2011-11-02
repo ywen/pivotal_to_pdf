@@ -3,7 +3,7 @@ module PivotalToPdf
     attr_reader :string
     private :string
     def initialize(string)
-      @string = string
+      @string = string.to_s
     end
 
     def output
