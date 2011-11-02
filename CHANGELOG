@@ -1,3 +1,5 @@
+v0.9.1
+  * A bug fix where a nil description or name field will break the PDF generation
 v0.9
   * Added printing support for bold and italic fonts
   * removed page number. Did not find it really useful
