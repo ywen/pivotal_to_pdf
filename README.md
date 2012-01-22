@@ -40,7 +40,7 @@ pivotal_to_pdf iteration 42
 
 Type in
 
-``bash
+```bash
 pivotal_to_pdf help
 
 pivotal_to_pdf help story
