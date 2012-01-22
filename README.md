@@ -21,8 +21,22 @@ a sample .pivotal.yml:
 
 After install the gem, you can do:
 
-* pivotal_to_pdf iteration       # print stories for the current iteration into a PDF file
+* pivotal_to_pdf current_iteration       # print stories for the current iteration into a PDF file
+
 * pivotal_to_pdf story STORY_ID  # print a single story specifed by ID into a PDF file
+
+* pivotal_to_pdf iteration iteration_number # print a single iteration specifed by the number into a PDF file
+
+Examples:
+
+```bash
+
+pivotal_to_pdf story 159898
+
+pivotal_to_pdf current_iteration
+
+pivotal_to_pdf iteration 42
+```
 
 The gem will then read the story/stories and print it into a PDF file
 
