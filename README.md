@@ -38,6 +38,20 @@ pivotal_to_pdf current_iteration
 pivotal_to_pdf iteration 42
 ```
 
+Type in
+
+``bash
+pivotal_to_pdf help
+
+pivotal_to_pdf help story
+
+pivotal_to_pdf help current_iteration
+
+pivotal_to_pdf help iteration
+```
+
+for more usage information
+
 The gem will then read the story/stories and print it into a PDF file
 
 The points section will be printed only for features. Bugs and Chores don't have points
