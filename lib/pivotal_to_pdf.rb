@@ -1,4 +1,5 @@
 require 'rubygems'
+require "pivotal_to_pdf/version"
 require 'rainbow'
 require 'thor'
 require 'active_resource'
