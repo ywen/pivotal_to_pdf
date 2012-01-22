@@ -21,7 +21,7 @@ module PivotalToPdf
       end
 
       def iteration(iteration_number)
-        iteration = Iteration.find(:all, :params => {:offset => iteration_number.to_i, :limit => 1}).first
+        iteration = Iteration.find(:all, :params => {:offset => iteration_number.to_i - 1, :limit => 1}).first
         PivotalToPdf::PdfWriter.new(iteration).write_to
       end
     end
