@@ -1,3 +1,6 @@
+v1.0.0
+  * Rename iteration command to current_iteration command
+  * Add iteration command for printing any given iterations
 v0.9.1
   * A bug fix where a nil description or name field will break the PDF generation
 v0.9
