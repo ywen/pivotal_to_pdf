@@ -5,15 +5,13 @@ require 'thor'
 
 class PivotalToPdfApp < Thor
   desc "story STORY_ID", "print a single story specifed by ID into a PDF file. The card will have a color stripe. The color will be green for features, yellow for chores and red for bugs"
-  method_option :nocolor, :aliases => "-nc", :desc => "Make the card having no color stripe"
   def story(story_id)
-    PivotalToPdf::Main.story story_id, options[:nocolor]
+    PivotalToPdf::Main.story story_id
   end
 
-  desc "iteration", "print stories for the current iteration into a PDF file"
-  method_option :nocolor, :aliases => "-nc", :desc => "Make the card having no color stripe"
-  def iteration(iteration_number = "current")
-    PivotalToPdf::Main.iteration iteration_number, options[:nocolor]
+  desc "current_iteration", "print stories for the current iteration into a PDF file"
+  def current_iteration
+    PivotalToPdf::Main.current_iteration
   end
 end
 
