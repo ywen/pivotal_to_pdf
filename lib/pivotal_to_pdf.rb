@@ -19,6 +19,11 @@ module PivotalToPdf
         iteration = Iteration.find(:all, :params => {:group => "current"}).first
         PivotalToPdf::PdfWriter.new(iteration).write_to
       end
+
+      def iteration(iteration_number)
+        iteration = Iteration.find(:all, :params => {:offset => iteration_number.to_i, :limit => 1}).first
+        PivotalToPdf::PdfWriter.new(iteration).write_to
+      end
     end
   end
 end

@@ -32,7 +32,7 @@ module PivotalToPdf
         PivotalToPdf::PdfWriter.stub(:new).and_return writer
       end
       
-      it "initiates a story" do
+      it "initiates an Iteration" do
         Iteration.should_receive(:find).with(:all, :params => {:group => "current"}).and_return [iteration]
         Main.current_iteration
       end
@@ -46,6 +46,30 @@ module PivotalToPdf
         writer.should_receive :write_to
         Main.current_iteration
       end
+    end
+
+    describe ".iteration" do
+      let(:iteration) {double :iteration}
+      before(:each) do
+        Iteration.stub(:find).and_return [iteration, double]
+        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+      end
+      it "initiates an Iteration" do
+        Iteration.should_receive(:find).with(:all, :params => {:offset => 12, :limit => 1}).and_return [iteration]
+        Main.iteration 12
+      end
+
+      it "build a pdf writer" do
+        PivotalToPdf::PdfWriter.should_receive(:new).with(iteration).and_return writer
+        Main.iteration 12
+      end
+
+      it "asks the pdf writer to print it" do
+        writer.should_receive :write_to
+        Main.iteration 12
+      end
+
+
     end
   end
 end
