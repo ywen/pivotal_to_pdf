@@ -1,3 +1,4 @@
 script: "cp .pivotal.yml.sample .pivotal.yml; PIVOTAL_TO_PDF_CONFIG_DIR=. bundle exec rake spec"
 rvm:
   - 1.9.3
+  - ree
