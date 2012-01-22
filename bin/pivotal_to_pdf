@@ -13,6 +13,11 @@ class PivotalToPdfApp < Thor
   def current_iteration
     PivotalToPdf::Main.current_iteration
   end
+
+  desc "iteration ITERATION-NUMBER-RELATIVE-TO-CURRENT", "print all the stories for the iteration specified into a PDF file"
+  def iteration(iteration_number)
+    PivotalToPdf::Main.iteration iteration_number
+  end
 end
 
 PivotalToPdfApp.start

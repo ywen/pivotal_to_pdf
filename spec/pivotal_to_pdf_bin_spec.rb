@@ -18,5 +18,17 @@ describe 'PivotalToPdf Bin' do
       PivotalToPdfApp.start(["current_iteration"])
     end
   end
-end
+  context "when pased in iteration sub command" do
+    it "should call iteration" do
+      PivotalToPdf::Main.should_receive(:iteration).with("1")
+      PivotalToPdfApp.start(["iteration", "1"])
+    end
 
+    context "when no iteration number specified" do
+      it "should not call iteration" do
+        PivotalToPdf::Main.should_not_receive(:iteration)
+        PivotalToPdfApp.start(["iteration"])
+      end
+    end
+  end
+end
