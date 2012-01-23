@@ -43,11 +43,7 @@ Type in
 ```bash
 pivotal_to_pdf help
 
-pivotal_to_pdf help story
-
-pivotal_to_pdf help current_iteration
-
-pivotal_to_pdf help iteration
+pivotal_to_pdf help <command>
 ```
 
 for more usage information
