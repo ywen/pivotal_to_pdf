@@ -2,7 +2,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), "spec_helper"))
 load File.expand_path(File.join(File.dirname(__FILE__), "..", "bin", "pivotal_to_pdf"))
 
 describe 'PivotalToPdf Bin' do
-  context "when pased in story sub command" do
+  context "when passed in story sub command" do
     it "should call story" do
       PivotalToPdf::Main.should_receive(:story).with(123)
       PivotalToPdfApp.start(["story", 123])
@@ -12,13 +12,23 @@ describe 'PivotalToPdf Bin' do
       PivotalToPdfApp.start(["story"])
     end
   end
-  context "when pased in current_iteration sub command" do
+  context "when passed in label sub command" do
+    it "should call label" do
+      PivotalToPdf::Main.should_receive(:label).with("sometext")
+      PivotalToPdfApp.start(["label", "sometext"])
+    end
+    it "should not call label when no label text is given" do
+      PivotalToPdf::Main.should_not_receive(:label)
+      PivotalToPdfApp.start(["label"])
+    end
+  end
+  context "when passed in current_iteration sub command" do
     it "should call current_iteration" do
       PivotalToPdf::Main.should_receive(:current_iteration)
       PivotalToPdfApp.start(["current_iteration"])
     end
   end
-  context "when pased in iteration sub command" do
+  context "when passed in iteration sub command" do
     it "should call iteration" do
       PivotalToPdf::Main.should_receive(:iteration).with("1")
       PivotalToPdfApp.start(["iteration", "1"])
