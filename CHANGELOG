@@ -1,3 +1,5 @@
+v1.0.x
+  * Add label command for printing stories matching any given label
 v1.0.0
   * Rename iteration command to current_iteration command
   * Add iteration command for printing any given iterations

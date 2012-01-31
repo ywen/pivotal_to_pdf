@@ -18,6 +18,12 @@ class PivotalToPdfApp < Thor
   def iteration(iteration_number)
     PivotalToPdf::Main.iteration iteration_number
   end
+
+  desc "label LABEL", "print stories for the label specified into a PDF file"
+  def label(label_text)
+    PivotalToPdf::Main.label label_text
+  end
+
 end
 
 PivotalToPdfApp.start

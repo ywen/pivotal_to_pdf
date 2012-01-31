@@ -69,8 +69,30 @@ module PivotalToPdf
         writer.should_receive :write_to
         Main.iteration 13
       end
+    end
 
+    describe ".label" do
+      let(:story) {double :story}
+      before(:each) do
+        Story.stub(:find).and_return story
+        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+      end
+      
+      it "initiates a label search" do
+        # Kind of a null test here, not sure how else to spec it
+        Story.should_receive(:find).with(:all, {:params=>{:filter=>"label:\"testing\""}}).and_return story
+        Main.label "testing"
+      end
 
+      it "build a pdf writer" do
+        PivotalToPdf::PdfWriter.should_receive(:new).with(story).and_return writer
+        Main.label "testing"
+      end
+
+      it "asks the pdf writer to print it" do
+        writer.should_receive :write_to
+        Main.label "testing"
+      end
     end
   end
 end

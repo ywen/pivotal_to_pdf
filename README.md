@@ -25,7 +25,9 @@ After install the gem, you can do:
 
 * pivotal_to_pdf story STORY_ID  # print a single story specifed by ID into a PDF file
 
-* pivotal_to_pdf iteration iteration_number # print a single iteration specifed by the number into a PDF file
+* pivotal_to_pdf iteration ITERATION_NUMBER # print a single iteration specifed by the number into a PDF file
+
+* pivotal_to_pdf label LABEL_TEXT # print stories matching the specified label into a PDF file
 
 Examples:
 
@@ -36,6 +38,8 @@ pivotal_to_pdf story 159898
 pivotal_to_pdf current_iteration
 
 pivotal_to_pdf iteration 42
+
+pivotal_to_pdf label print-these
 ```
 
 Type in
