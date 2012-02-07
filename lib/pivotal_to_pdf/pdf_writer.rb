@@ -7,14 +7,14 @@ require 'rainbow'
 module PivotalToPdf
   class PdfWriter
     attr_reader :story_or_iteration, :stories
-    def initialize(story_or_iteration, colored_stripe = true)
+    def initialize(story_or_iteration)
       @story_or_iteration = story_or_iteration
-      @stories = story_or_iteration.is_a?(Iteration) ? story_or_iteration.stories : [story_or_iteration]
+      @stories = story_or_iteration.is_a?(Iteration) ? story_or_iteration.stories : story_or_iteration.is_a?(Array) ? story_or_iteration : [story_or_iteration]
       p stories.size
     end
 
-    def write_to
-      Prawn::Document.generate("#{story_or_iteration.id}.pdf",
+    def write_to(destination)
+      Prawn::Document.generate("#{destination}.pdf",
                                :page_layout => :landscape,
                                :margin      => [25, 25, 50, 25],
                                :page_size   => [302, 432]) do |pdf|
@@ -52,7 +52,7 @@ module PivotalToPdf
         end
         # pdf.number_pages "<page>/<total>", {:at => [pdf.bounds.right - 16, -28]}
 
-        puts ">>> Generated PDF file in '#{story_or_iteration.id}.pdf'".foreground(:green)
+        puts ">>> Generated PDF file in '#{destination}.pdf'".foreground(:green)
                                end
     rescue Exception
       puts "[!] There was an error while generating the PDF file... What happened was:".foreground(:red)
