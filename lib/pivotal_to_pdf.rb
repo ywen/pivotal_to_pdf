@@ -19,7 +19,7 @@ module PivotalToPdf
     class << self
       def story(story_id)
         story = Story.find(story_id)
-       PivotalToPdf::PdfWriter.new(story).write_to(story_id)
+        PivotalToPdf::PdfWriter.new(story).write_to(story_id)
       end
 
       def current_iteration
