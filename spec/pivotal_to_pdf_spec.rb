@@ -16,7 +16,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(story).and_return writer
+        PivotalToPdf::PdfWriter.should_receive(:new).with([ story ]).and_return writer
         Main.story 23
       end
 
@@ -26,7 +26,8 @@ module PivotalToPdf
       end
     end
     describe ".current_iteration" do
-      let(:iteration) {double :iteration}
+      let(:stories) {double :stories_from_iteration}
+      let(:iteration) {double :iteration, :stories => stories}
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
         PivotalToPdf::PdfWriter.stub(:new).and_return writer
@@ -38,7 +39,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(iteration).and_return writer
+        PivotalToPdf::PdfWriter.should_receive(:new).with(stories).and_return writer
         Main.current_iteration
       end
 
@@ -49,7 +50,8 @@ module PivotalToPdf
     end
 
     describe ".iteration" do
-      let(:iteration) {double :iteration}
+      let(:stories) {double :stories_from_iteration}
+      let(:iteration) {double :iteration, :stories => stories}
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
         PivotalToPdf::PdfWriter.stub(:new).and_return writer
@@ -61,7 +63,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(iteration).and_return writer
+        PivotalToPdf::PdfWriter.should_receive(:new).with(stories).and_return writer
         Main.iteration 13
       end
 

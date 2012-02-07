@@ -6,10 +6,10 @@ require 'rainbow'
 
 module PivotalToPdf
   class PdfWriter
-    attr_reader :story_or_iteration, :stories
-    def initialize(story_or_iteration)
-      @story_or_iteration = story_or_iteration
-      @stories = story_or_iteration.is_a?(Iteration) ? story_or_iteration.stories : story_or_iteration.is_a?(Array) ? story_or_iteration : [story_or_iteration]
+    attr_reader :stories
+    private :stories
+    def initialize(stories)
+      @stories = stories
       p stories.size
     end
 

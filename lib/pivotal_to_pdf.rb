@@ -19,17 +19,17 @@ module PivotalToPdf
     class << self
       def story(story_id)
         story = Story.find(story_id)
-        PivotalToPdf::PdfWriter.new(story).write_to(story_id)
+        PivotalToPdf::PdfWriter.new([ story ]).write_to(story_id)
       end
 
       def current_iteration
         iteration = Iteration.find(:all, :params => {:group => "current"}).first
-        PivotalToPdf::PdfWriter.new(iteration).write_to("current")
+        PivotalToPdf::PdfWriter.new(iteration.stories).write_to("current")
       end
 
       def iteration(iteration_number)
         iteration = Iteration.find(:all, :params => {:offset => iteration_number.to_i - 1, :limit => 1}).first
-        PivotalToPdf::PdfWriter.new(iteration).write_to(iteration_number)
+        PivotalToPdf::PdfWriter.new(iteration.stories).write_to(iteration_number)
       end
 
       def label(label_text)
