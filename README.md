@@ -66,4 +66,4 @@ The gem assumes that you have https access to the pivotal tracker
 * Kristian Rasmussen 
 * [Alastair Mair](https://github.com/amair)
 * [John-Mason P. Shackelford](https://github.com/jpshackelford)
-* [mogul](https://github.com/mogul)
+* [Bret Mogilefsky](https://github.com/mogul)
