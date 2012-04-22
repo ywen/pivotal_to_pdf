@@ -7,7 +7,7 @@ module PivotalToPdf
         {
           :project_id => "1233",
           :token => "aaaaa",
-          :format_class => "PivotalToPdf::SomethingCrazy",
+          :formatter => "PivotalToPdf::SomethingCrazy",
           :something_else => "some other my own configs" 
         }
       end
@@ -34,7 +34,7 @@ module PivotalToPdf
         {
           :project_id => "1233",
           :token => "aaaaa",
-          :format_class => "PivotalToPdf::SomethingCrazy",
+          :formatter => "PivotalToPdf::SomethingCrazy",
           :something_else => "some other my own configs" 
         }.each do |key, value|
           it "defines #{key} as a method and returns the value: #{value}" do
