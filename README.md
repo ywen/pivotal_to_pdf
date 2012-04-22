@@ -16,8 +16,13 @@ First you need to create a .pivotal.yml under your home directory. On windows, h
 
 a sample .pivotal.yml:
 
+```yaml
     token: your-api-token-of-pivotal-tracker
     project_id: your-ptroject-id
+    formatter: PivotalToPdf::DefaultFormatter
+```
+
+The meaning of formatter will be explained in the next section
 
 After install the gem, you can do:
 
