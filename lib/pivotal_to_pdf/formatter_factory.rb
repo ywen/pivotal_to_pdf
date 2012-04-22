@@ -1,7 +1,7 @@
 module PivotalToPdf
   module FormatterFactory
     class << self
-      def current_formatter
+      def formatter
         config = Configure.new
         config.respond_to?(:formatter) ? 
           config.formatter.constantize :
