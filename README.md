@@ -22,7 +22,7 @@ project_id: your-ptroject-id
 formatter: PivotalToPdf::DefaultFormatter
 ```
 
-The meaning of formatter will be explained in the next section
+The meaning of the ```formatter``` key will be explained in the next section
 
 After install the gem, you can do:
 
@@ -67,7 +67,7 @@ The gem assumes that you have https access to the pivotal tracker
 
 ## Formatters
 
-From the version 1.2, The gem supports alternative formatter other the default one.
+From the version 1.2, The gem supports alternative formatter other than the default one.
 In the ```.pivotal.yml``` file, if you define a key like
 
 ```yaml
