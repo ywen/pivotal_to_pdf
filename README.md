@@ -17,9 +17,9 @@ First you need to create a .pivotal.yml under your home directory. On windows, h
 a sample .pivotal.yml:
 
 ```yaml
-    token: your-api-token-of-pivotal-tracker
-    project_id: your-ptroject-id
-    formatter: PivotalToPdf::DefaultFormatter
+token: your-api-token-of-pivotal-tracker
+project_id: your-ptroject-id
+formatter: PivotalToPdf::DefaultFormatter
 ```
 
 The meaning of formatter will be explained in the next section
@@ -64,6 +64,23 @@ The points section will be printed only for features. Bugs and Chores don't have
 Printed a green bounding box for feature, a yellow box for chores and a red box for bugs
 
 The gem assumes that you have https access to the pivotal tracker
+
+## Formatters
+
+From the version 1.2, The gem supports alternative formatter other the default one.
+In the ```.pivotal.yml``` file, if you define a key like
+
+```yaml
+
+formatter: PivotalToPdf::MyPrettyHtmlWriter
+```
+
+The gem will use ```PivotalToPdf::MyPrettyHtmlWriter``` to generate the output.
+
+The class implementation should have the same interface as the ```DefaultFormatter```
+
+- The ```initialize``` should take an array of stories
+- The ```write_to``` method write the output
 
 ##Contributors
 * [Yi Wen](https://github.com/ywen)
