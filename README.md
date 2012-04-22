@@ -82,6 +82,8 @@ The class implementation should have the same interface as the ```DefaultFormatt
 - The ```initialize``` should take an array of stories
 - The ```write_to``` method write the output
 
+This feature is associated to the issue #14. I basically rewrite the code to implement this myself.
+
 ##Contributors
 * [Yi Wen](https://github.com/ywen)
 * Carol Nichols
