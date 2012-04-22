@@ -7,7 +7,7 @@ module PivotalToPdf
       let(:story) {double :story}
       before(:each) do
         Story.stub(:find).and_return story
-        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+        DefaultFormatter.stub(:new).and_return writer
       end
       
       it "initiates a story" do
@@ -16,7 +16,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with([ story ]).and_return writer
+        DefaultFormatter.should_receive(:new).with([ story ]).and_return writer
         Main.story 23
       end
 
@@ -30,7 +30,7 @@ module PivotalToPdf
       let(:iteration) {double :iteration, :stories => stories}
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
-        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+        DefaultFormatter.stub(:new).and_return writer
       end
       
       it "initiates an Iteration" do
@@ -39,7 +39,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(stories).and_return writer
+        DefaultFormatter.should_receive(:new).with(stories).and_return writer
         Main.current_iteration
       end
 
@@ -54,7 +54,7 @@ module PivotalToPdf
       let(:iteration) {double :iteration, :stories => stories}
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
-        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+        DefaultFormatter.stub(:new).and_return writer
       end
 
       it "fetches an Iteration, given the Iteration number (you have to minus to get the accurate iteration)" do
@@ -63,7 +63,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(stories).and_return writer
+        DefaultFormatter.should_receive(:new).with(stories).and_return writer
         Main.iteration 13
       end
 
@@ -77,7 +77,7 @@ module PivotalToPdf
       let(:story) {double :story}
       before(:each) do
         Story.stub(:find).and_return story
-        PivotalToPdf::PdfWriter.stub(:new).and_return writer
+        DefaultFormatter.stub(:new).and_return writer
       end
       
       it "initiates a label search" do
@@ -87,7 +87,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        PivotalToPdf::PdfWriter.should_receive(:new).with(story).and_return writer
+        DefaultFormatter.should_receive(:new).with(story).and_return writer
         Main.label "testing"
       end
 

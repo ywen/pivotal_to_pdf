@@ -5,7 +5,7 @@ require 'prawn'
 require 'rainbow'
 
 module PivotalToPdf
-  class PdfWriter
+  class DefaultFormatter
     attr_reader :stories
     private :stories
     def initialize(stories)
