@@ -10,10 +10,6 @@ require 'pivotal_to_pdf/story'
 require 'pivotal_to_pdf/pdf_writer'
 require 'pivotal_to_pdf/pt-workarounds'
 
-# Uncomment the following to trace the URLs and results generated via ActiveResource
-# require 'logger'
-# ActiveResource::Base.logger = Logger.new(STDERR)
-
 module PivotalToPdf
   class Main < Thor
     class << self
