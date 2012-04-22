@@ -5,6 +5,9 @@ gem 'prawn'
 gem 'thor'
 group :test do
   gem 'rspec'
+  gem "guard-spork"
+  gem "guard-rspec"
+  gem "growl-rspec"
 end
 
 group :test, :development do

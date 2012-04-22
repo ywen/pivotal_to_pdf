@@ -11,13 +11,14 @@ Gem::Specification.new do |s|
   s.description    = "Convert Pivotal Tracker Stories to 4x6 PDF for printing so that you can stick the card to your story board"
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
   s.author         = "Yi Wen"
-  s.add_runtime_dependency(%q<activeresource>, ["3.0.9"])
-  s.add_runtime_dependency(%q<prawn>, ["0.12.0"])
-  s.add_runtime_dependency(%q<rainbow>, [">= 0"])
-  s.add_runtime_dependency(%q<thor>, [">= 0"])
+  s.add_runtime_dependency(%q<activeresource>, "3.0.9")
+  s.add_runtime_dependency(%q<prawn>, "0.12.0")
+  s.add_runtime_dependency(%q<rainbow>, ">= 0")
+  s.add_runtime_dependency(%q<thor>, ">= 0")
+  s.add_development_dependency(%q<rspec>)
   s.homepage = "https://github.com/ywen/pivotal_to_pdf"
 end
