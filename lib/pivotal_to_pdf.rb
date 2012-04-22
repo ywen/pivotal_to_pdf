@@ -3,6 +3,7 @@ require "pivotal_to_pdf/version"
 require 'rainbow'
 require 'thor'
 require 'active_resource'
+require 'pivotal_to_pdf/configure'
 require 'pivotal_to_pdf/simple_text_formatter'
 require 'pivotal_to_pdf/pivotal'
 require 'pivotal_to_pdf/iteration'
