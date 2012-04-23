@@ -72,7 +72,7 @@ In the ```.pivotal.yml``` file, if you define a key like
 
 ```yaml
 
-formatter: PivotalToPdf::MyPrettyHtmlWriter
+formatter: PivotalToPdf::Formatters:MyPrettyHtmlWriter
 ```
 
 The gem will use ```PivotalToPdf::Formatters::MyPrettyHtmlWriter``` to generate the output.
