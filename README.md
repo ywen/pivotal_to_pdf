@@ -67,7 +67,7 @@ The gem assumes that you have https access to the pivotal tracker
 
 ## Formatters
 
-From the version 1.2, The gem supports alternative formatter other than the default one.
+From the version 1.3.0, The gem supports alternative formatter other than the default one.
 In the ```.pivotal.yml``` file, if you define a key like
 
 ```yaml
