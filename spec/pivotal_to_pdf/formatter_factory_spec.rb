@@ -10,7 +10,7 @@ module PivotalToPdf
       context "when the format_class is not defined" do
         let(:config) { double :config }
         it "returns the default formatter" do
-          FormatterFactory.formatter.should eq(PivotalToPdf::DefaultFormatter)
+          FormatterFactory.formatter.should eq(PivotalToPdf::Formatters::Default)
         end
       end
       

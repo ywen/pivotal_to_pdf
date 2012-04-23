@@ -4,12 +4,12 @@ module PivotalToPdf
   describe Main do
     let(:writer) {double :writer, :write_to => true}
     before(:each) do
-      FormatterFactory.stub(:formatter).and_return DefaultFormatter
+      FormatterFactory.stub(:formatter).and_return Formatters::Default
     end
     
     shared_examples "formatter fetching" do
       it "asks the FormatterFactory for the formatter" do
-        FormatterFactory.should_receive(:formatter).and_return DefaultFormatter
+        FormatterFactory.should_receive(:formatter).and_return Formatters::Default
         method.call
       end
     end
@@ -18,7 +18,7 @@ module PivotalToPdf
       let(:method) { lambda{ Main.story 32 } }
       before(:each) do
         Story.stub(:find).and_return story
-        DefaultFormatter.stub(:new).and_return writer
+        Formatters::Default.stub(:new).and_return writer
       end
 
       include_examples "formatter fetching"
@@ -29,7 +29,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        DefaultFormatter.should_receive(:new).with([ story ]).and_return writer
+        Formatters::Default.should_receive(:new).with([ story ]).and_return writer
         Main.story 23
       end
 
@@ -44,7 +44,7 @@ module PivotalToPdf
       let(:method) { lambda{ Main.current_iteration } }
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
-        DefaultFormatter.stub(:new).and_return writer
+        Formatters::Default.stub(:new).and_return writer
       end
       include_examples "formatter fetching"
       
@@ -54,7 +54,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        DefaultFormatter.should_receive(:new).with(stories).and_return writer
+        Formatters::Default.should_receive(:new).with(stories).and_return writer
         Main.current_iteration
       end
 
@@ -70,7 +70,7 @@ module PivotalToPdf
       let(:method) { lambda{ Main.iteration 13 } }
       before(:each) do
         Iteration.stub(:find).and_return [iteration, double]
-        DefaultFormatter.stub(:new).and_return writer
+        Formatters::Default.stub(:new).and_return writer
       end
 
       include_examples "formatter fetching"
@@ -81,7 +81,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        DefaultFormatter.should_receive(:new).with(stories).and_return writer
+        Formatters::Default.should_receive(:new).with(stories).and_return writer
         Main.iteration 13
       end
 
@@ -96,7 +96,7 @@ module PivotalToPdf
       let(:method) { lambda{ Main.label "testing" } }
       before(:each) do
         Story.stub(:find).and_return story
-        DefaultFormatter.stub(:new).and_return writer
+        Formatters::Default.stub(:new).and_return writer
       end
       include_examples "formatter fetching"
       
@@ -107,7 +107,7 @@ module PivotalToPdf
       end
 
       it "build a pdf writer" do
-        DefaultFormatter.should_receive(:new).with(story).and_return writer
+        Formatters::Default.should_receive(:new).with(story).and_return writer
         Main.label "testing"
       end
 
