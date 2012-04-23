@@ -75,14 +75,17 @@ In the ```.pivotal.yml``` file, if you define a key like
 formatter: PivotalToPdf::MyPrettyHtmlWriter
 ```
 
-The gem will use ```PivotalToPdf::MyPrettyHtmlWriter``` to generate the output.
-
-The class implementation should have the same interface as the ```DefaultFormatter```
-
-- The ```initialize``` should take an array of stories
-- The ```write_to``` method write the output
+The gem will use ```PivotalToPdf::Formatters::MyPrettyHtmlWriter``` to generate the output.
 
 This feature is associated to the [issue #14](pivotal_to_pdf/issues/14). I basically rewrite the code to implement this myself.
+
+The actual formatters live in a [ seperate gem ](https://github.com/ywen/pivotal_to_pdf-formatters) so that only that gem needs to be updated when needed. Once that gem is updated, you can do:
+
+```bash
+$ gem update pivotal_to_pdf-formatters
+```
+
+to use the new formatters being added
 
 ##Contributors
 * [Yi Wen](https://github.com/ywen)

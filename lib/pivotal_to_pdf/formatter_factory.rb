@@ -5,7 +5,7 @@ module PivotalToPdf
         config = Configure.new
         config.respond_to?(:formatter) ? 
           config.formatter.constantize :
-          PivotalToPdf::DefaultFormatter
+          PivotalToPdf::Formatters::Default
       end
     end
   end

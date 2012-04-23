@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
   s.author         = "Yi Wen"
+  s.add_runtime_dependency(%q<pivotal_to_pdf-formatters>)
   s.add_runtime_dependency(%q<activeresource>, "3.0.9")
   s.add_runtime_dependency(%q<prawn>, "0.12.0")
   s.add_runtime_dependency(%q<rainbow>, ">= 0")
