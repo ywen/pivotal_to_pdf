@@ -19,7 +19,7 @@ a sample .pivotal.yml:
 ```yaml
 token: your-api-token-of-pivotal-tracker
 project_id: your-ptroject-id
-formatter: PivotalToPdf::DefaultFormatter
+formatter: /path/to/my_formatter.rb
 ```
 
 The meaning of the ```formatter``` key will be explained in the next section
@@ -78,6 +78,15 @@ formatter: PivotalToPdf::Formatters:MyPrettyHtmlWriter
 The gem will use ```PivotalToPdf::Formatters::MyPrettyHtmlWriter``` to generate the output.
 
 This feature is associated to the [issue #14](pivotal_to_pdf/issues/14). I basically rewrite the code to implement this myself.
+
+You can also specify a formatter using a file path to a ruby file:
+
+```yaml
+
+formatter: /path/to/my_formatter.rb
+```
+
+This file should define a formatter class ```MyFormatter```.
 
 The actual formatters live in a [ seperate gem ](https://github.com/ywen/pivotal_to_pdf-formatters) so that only that gem needs to be updated when needed. Once that gem is updated, you can do:
 
