@@ -19,7 +19,7 @@ a sample .pivotal.yml:
 ```yaml
 token: your-api-token-of-pivotal-tracker
 project_id: your-ptroject-id
-formatter: PivotalToPdf::DefaultFormatter
+formatter: PivotalToPdf::Formatters::Default
 ```
 
 The meaning of the ```formatter``` key will be explained in the next section
