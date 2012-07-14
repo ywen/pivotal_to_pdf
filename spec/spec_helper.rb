@@ -13,6 +13,10 @@ Spork.prefork do
     # config.mock_with :flexmock
     # config.mock_with :rr
     config.mock_with :rspec
+
+    config.expect_with :rspec do |c|
+      c.syntax = :expect
+    end
     # out = ENV['CC_BUILD_ARTIFACTS'] || "#{Rails.root}"
     # config.output_stream = File.open("#{out}/UnitTests/index.html", "w") if config.formatter_class.name =~ /HtmlFormatter/
 

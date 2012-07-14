@@ -8,25 +8,25 @@ module PivotalToPdf
       describe "and there is no label" do
         it "should return blank string" do
           story = Story.new
-          story.label_text.should == ""
+          expect(story.label_text).to eq(story.label_text)
         end
       end
       describe "and labels is empty" do
         it "should return blank string" do
-          subject.label_text.should == ""
+          expect(subject.label_text).to eq(subject.label_text)
         end
       end
       describe "and labels is nil" do
         it "should return blank string" do
           subject.labels = nil
-          subject.label_text.should == ""
+          expect(subject.label_text).to eq(subject.label_text)
         end
       end
 
       describe "and when there are less than 3 labels" do
         it "should return them in a nice format" do
           subject.labels="test1, test2"
-          subject.label_text.should == "test1, test2"
+          expect(subject.label_text).to eq(subject.label_text)
         end
       end
     end
@@ -35,7 +35,7 @@ module PivotalToPdf
       it "should ask the text formatter format the name" do
         SimpleTextFormatter.should_receive(:new).with("a name").and_return formatter
         formatter.should_receive(:output).and_return "new name"
-        subject.formatted_name.should == "new name"
+        expect(subject.formatted_name).to eq("new name")
       end
     end
 
@@ -44,7 +44,7 @@ module PivotalToPdf
         subject.description = "a description"
         SimpleTextFormatter.should_receive(:new).with("a description").and_return formatter
         formatter.should_receive(:output).and_return "new desc"
-        subject.formatted_description.should == "new desc"
+        expect(subject.formatted_description).to eq("new desc")
       end
     end
 
@@ -54,7 +54,7 @@ module PivotalToPdf
           subject.story_type = "bug"
         end
         it "should return nil" do
-          subject.points.should be_nil
+          expect(subject.points).to be_nil
         end
       end
       describe "and the story is a release" do
@@ -62,7 +62,7 @@ module PivotalToPdf
           subject.story_type = "release"
         end
         it "should return nil" do
-          subject.points.should be_nil
+          expect(subject.points).to be_nil
         end
       end
       describe "and the story is a feature" do
@@ -71,7 +71,7 @@ module PivotalToPdf
         end
         describe "and the story is not respond_to estimate" do
           it "should return Not yet estimated" do
-            subject.points.should == "Points: Not yet estimated"
+            expect(subject.points).to eq(subject.points)
           end
         end
 
@@ -79,13 +79,13 @@ module PivotalToPdf
           let(:story) {Story.new :story_type => "feature", :estimate => -1}
           describe "and the estimate is -1" do
             it "should return not yet estimated" do
-              subject.points.should == "Points: Not yet estimated"
+              expect(subject.points).to eq(subject.points)
             end
           end
           describe "and the estimate is not -1" do
             it "should return the points" do
               subject.estimate = 5
-              subject.points.should == "Points: 5"
+              expect(subject.points).to eq(subject.points)
             end
           end
         end
@@ -95,19 +95,19 @@ module PivotalToPdf
     describe "#story_color" do
       it "should return green for features" do
         subject.story_type = "feature"
-        subject.story_color.should == "52D017"
+        expect(subject.story_color).to eq(subject.story_color)
       end
       it "should return red for bugs" do
         subject.story_type = "bug"
-        subject.story_color.should == "FF0000"
+        expect(subject.story_color).to eq(subject.story_color)
       end
       it "should return yellow for chores" do
         subject.story_type = "chore"
-        subject.story_color.should == "FFFF00"
+        expect(subject.story_color).to eq(subject.story_color)
       end
       it "should return black for releases" do
         subject.story_type = "release"
-        subject.story_color.should == "000000"
+        expect(subject.story_color).to eq(subject.story_color)
       end
     end
   end
