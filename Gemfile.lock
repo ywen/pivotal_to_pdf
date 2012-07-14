@@ -25,6 +25,7 @@ GEM
     guard-spork (0.6.1)
       guard (>= 0.10.0)
       spork (>= 0.8.4)
+    htmlentities (4.3.1)
     i18n (0.5.0)
     pdf-reader (1.1.0)
       Ascii85 (~> 1.0.0)
@@ -56,6 +57,7 @@ DEPENDENCIES
   growl-rspec
   guard-rspec
   guard-spork
+  htmlentities
   pivotal_to_pdf-formatters
   prawn
   rainbow

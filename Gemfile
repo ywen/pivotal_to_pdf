@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 gem 'rainbow'
 gem 'activeresource', "3.0.9"
+gem "htmlentities"
 gem 'prawn'
 gem 'thor'
 gem "pivotal_to_pdf-formatters"
