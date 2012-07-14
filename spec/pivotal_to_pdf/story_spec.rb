@@ -5,46 +5,44 @@ module PivotalToPdf
     subject {Story.new :labels => [], :story_type => nil, :name => "a name"}
     let(:formatter) {double :formatter, :output => nil}
     describe "#label_text" do
-      describe "and there is no label" do
+      context "and there is no label" do
         it "should return blank string" do
           story = Story.new
           expect(story.label_text).to eq("")
         end
       end
-      describe "and labels is empty" do
+
+      context "and labels is empty" do
         it "should return blank string" do
           expect(subject.label_text).to eq("")
         end
       end
-      describe "and labels is nil" do
+
+      context "and labels is nil" do
         it "should return blank string" do
           subject.labels = nil
           expect(subject.label_text).to eq("")
         end
       end
 
-      describe "and when there are less than 3 labels" do
-        it "should return them in a nice format" do
+      context "and when the labels are not empty" do
+        it "should returns text" do
           subject.labels="test1, test2"
-          expect(subject.label_text).to eq("test1, test2")
+          expect(subject.label_text).to eq(Text.new("test1, test2"))
         end
       end
     end
 
     describe "#formatted_name" do
-      it "asks the text formatter format the name" do
-        SimpleTextFormatter.should_receive(:new).with("a name").and_return formatter
-        formatter.should_receive(:output).and_return "new name"
-        expect(subject.formatted_name).to eq("new name")
+      it "returns the Text" do
+        expect(subject.formatted_name).to eq(Text.new("a name"))
       end
     end
 
     describe "#formatted_description" do
-      it "asks the text formatter format the description" do
+      it "returns the Text" do
         subject.description = "a description"
-        SimpleTextFormatter.should_receive(:new).with("a description").and_return formatter
-        formatter.should_receive(:output).and_return "new desc"
-        expect(subject.formatted_description).to eq("new desc")
+        expect(subject.formatted_description).to eq(Text.new("a description"))
       end
     end
 
