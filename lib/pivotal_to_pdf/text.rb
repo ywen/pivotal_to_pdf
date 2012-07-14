@@ -2,7 +2,7 @@ module PivotalToPdf
   class Text
     class << self
       def formatting_classes
-        [ SimpleTextFormatter ]
+        [ TextFormatters::SimpleMarkup ]
       end
     end
 
