@@ -2,49 +2,35 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "spec_helper"))
 
 module PivotalToPdf
   describe Story do
-    subject {Story.new :labels => [], :story_type => nil, :name => "a name"}
+    subject {
+      Story.new :labels => "test1 test2", :story_type => nil, :name => "a name", :description => "a description"
+    }
     let(:formatter) {double :formatter, :output => nil}
-    describe "#label_text" do
+    describe "#formatted_labels" do
       context "and there is no label" do
         it "should return blank string" do
           story = Story.new
-          expect(story.label_text).to eq("")
+          expect(story.formatted_labels).to eq("")
         end
       end
 
       context "and labels is empty" do
         it "should return blank string" do
-          expect(subject.label_text).to eq("")
+          subject.labels = ""
+          expect(subject.formatted_labels).to eq("")
         end
       end
 
       context "and labels is nil" do
         it "should return blank string" do
           subject.labels = nil
-          expect(subject.label_text).to eq("")
+          expect(subject.formatted_labels).to eq("")
         end
       end
 
-      context "and when the labels are not empty" do
-        it "should returns text" do
-          subject.labels="test1, test2"
-          expect(subject.label_text).to eq(Text.new("test1, test2"))
-        end
-      end
     end
 
-    describe "#formatted_name" do
-      it "returns the Text" do
-        expect(subject.formatted_name).to eq(Text.new("a name"))
-      end
-    end
-
-    describe "#formatted_description" do
-      it "returns the Text" do
-        subject.description = "a description"
-        expect(subject.formatted_description).to eq(Text.new("a description"))
-      end
-    end
+    it_converts_string_through_text_class_on :name, :description, :labels
 
     describe "#points" do
       describe "and the story is a bug" do
