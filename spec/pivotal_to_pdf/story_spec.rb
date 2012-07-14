@@ -32,7 +32,7 @@ module PivotalToPdf
     end
 
     describe "#formatted_name" do
-      it "should ask the text formatter format the name" do
+      it "asks the text formatter format the name" do
         SimpleTextFormatter.should_receive(:new).with("a name").and_return formatter
         formatter.should_receive(:output).and_return "new name"
         expect(subject.formatted_name).to eq("new name")
@@ -40,7 +40,7 @@ module PivotalToPdf
     end
 
     describe "#formatted_description" do
-      it "should ask the text formatter format the description" do
+      it "asks the text formatter format the description" do
         subject.description = "a description"
         SimpleTextFormatter.should_receive(:new).with("a description").and_return formatter
         formatter.should_receive(:output).and_return "new desc"
