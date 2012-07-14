@@ -5,21 +5,11 @@ require 'rspec/core'
 Spork.prefork do
 
   RSpec.configure do |config|
-    # == Mock Framework
-    #
-    # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-    #
-    # config.mock_with :mocha
-    # config.mock_with :flexmock
-    # config.mock_with :rr
+
+    config.expect_with :rspec do |c|
+      c.syntax = :expect
+    end
     config.mock_with :rspec
-    # out = ENV['CC_BUILD_ARTIFACTS'] || "#{Rails.root}"
-    # config.output_stream = File.open("#{out}/UnitTests/index.html", "w") if config.formatter_class.name =~ /HtmlFormatter/
-
-
-    # If you're not using ActiveRecord, or you'd prefer not to run each of your
-    # examples within a transaction, comment the following line or assign false
-    # instead of true.
   end
 
 end
