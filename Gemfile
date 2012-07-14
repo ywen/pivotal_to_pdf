@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 gem 'rainbow'
 gem 'activeresource', "3.0.9"
-gem "htmlentities"
 gem 'prawn'
 gem 'thor'
-gem "pivotal_to_pdf-formatters", "0.0.3"
+gem "pivotal_to_pdf-formatters", :path => "../pivotal_to_pdf-formatters"
+# gem "pivotal_to_pdf-formatters", ">=0.0.3"
 group :test do
   gem 'rspec'
   gem "guard-spork"

@@ -6,7 +6,9 @@ module PivotalToPdf
 
     describe ".formatting_classes" do
       it "returns formatting classes" do
-        expect(Text.formatting_classes).to eq([ TextFormatters::SimpleMarkup ])
+        expect(Text.formatting_classes).to eq(
+          [ TextFormatters::SimpleMarkup ]
+        )
       end
     end
 
