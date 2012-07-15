@@ -1,8 +1,8 @@
 module PivotalToPdf
   class Story < Pivotal
-    def label_text
+    def formatted_labels
       return "" if !self.respond_to?(:labels) || self.labels.nil? || self.labels.empty?
-      labels
+      formatted_output :labels
     end
 
     def points
@@ -28,7 +28,7 @@ module PivotalToPdf
     private
 
     def formatted_output(field)
-      SimpleTextFormatter.new(send(field)).output
+      Text.new(send(field)).to_s
     end
 
     ["feature", "bug", "chore", "release"].each do |type_str|
