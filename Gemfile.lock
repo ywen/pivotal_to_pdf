@@ -29,7 +29,7 @@ GEM
     pdf-reader (1.1.1)
       Ascii85 (~> 1.0.0)
       ruby-rc4
-    pivotal_to_pdf-formatters (0.0.3)
+    pivotal_to_pdf-formatters (0.0.4)
     prawn (0.12.0)
       pdf-reader (>= 0.9.0)
       ttfunk (~> 1.0.2)
@@ -56,7 +56,7 @@ DEPENDENCIES
   growl-rspec
   guard-rspec
   guard-spork
-  pivotal_to_pdf-formatters (>= 0.0.3)
+  pivotal_to_pdf-formatters (>= 0.0.4)
   prawn
   rainbow
   rake
