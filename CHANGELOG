@@ -1,3 +1,6 @@
+V1.3.3
+  * Internal refactoring.
+  * BREAKING CHANGE: ```Story#label_text``` is renamed to ```Story#formatted_labels```
 v1.1.0
   * Add label command for printing stories matching any given label
 v1.0.0
