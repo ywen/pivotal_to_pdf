@@ -38,7 +38,7 @@ module PivotalToPdf
           :something_else => "some other my own configs" 
         }.each do |key, value|
           it "defines #{key} as a method and returns the value: #{value}" do
-            subject.send(key).should eq(value)
+            expect(subject.send(key)).to eq(value)
           end
         end
       end

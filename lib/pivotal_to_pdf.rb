@@ -6,9 +6,10 @@ require 'active_resource'
 require "pivotal_to_pdf-formatters"
 require 'pivotal_to_pdf/configure'
 require 'pivotal_to_pdf/formatter_factory'
-require 'pivotal_to_pdf/simple_text_formatter'
+require 'pivotal_to_pdf/text_formatters/simple_markup'
 require 'pivotal_to_pdf/pivotal'
 require 'pivotal_to_pdf/iteration'
+require 'pivotal_to_pdf/text'
 require 'pivotal_to_pdf/story'
 require 'pivotal_to_pdf/pt-workarounds'
 
