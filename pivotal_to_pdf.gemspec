@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.description    = "Convert Pivotal Tracker Stories to 4x6 PDF for printing so that you can stick the card to your story board"
 
   s.files         = `git ls-files`.split("\n")
+  s.license       = "MIT"
   s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
