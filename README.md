@@ -95,3 +95,4 @@ to use the new formatters being added
 * [Alastair Mair](https://github.com/amair)
 * [John-Mason P. Shackelford](https://github.com/jpshackelford)
 * [Bret Mogilefsky](https://github.com/mogul)
+* [Luke brown](https://github.com/tsdbrown)
