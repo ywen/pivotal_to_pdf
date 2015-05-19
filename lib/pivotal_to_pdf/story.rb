@@ -1,5 +1,14 @@
 module PivotalToPdf
   class Story < Pivotal
+
+    def self.find_stories(story_ids)
+      stories = []
+      story_ids.each do |id|
+        stories << self.find(id)
+      end
+      stories
+    end
+
     def formatted_labels
       return "" if !self.respond_to?(:labels) || self.labels.nil? || self.labels.empty?
       formatted_output :labels

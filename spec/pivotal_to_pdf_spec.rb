@@ -15,27 +15,32 @@ module PivotalToPdf
     end
     describe ".story" do
       let(:story) {double :story}
-      let(:method) { lambda{ Main.story 32 } }
+      let(:method) { lambda{ Main.story([23]) } }
       before(:each) do
-        Story.stub(:find).and_return story
+        Story.stub(:find_stories).and_return story
         Formatters::Default.stub(:new).and_return writer
       end
 
       include_examples "formatter fetching"
-      
+
       it "initiates a story" do
-        Story.should_receive(:find).with(23).and_return story
-        Main.story 23
+        Story.should_receive(:find_stories).with([23])
+        Main.story([23])
+      end
+
+      it "initiates two stories" do
+        Story.should_receive(:find_stories).with([23, 55])
+        Main.story([23, 55])
       end
 
       it "build a pdf writer" do
-        Formatters::Default.should_receive(:new).with([ story ]).and_return writer
-        Main.story 23
+        Formatters::Default.should_receive(:new).with(story).and_return writer
+        Main.story([23])
       end
 
       it "asks the pdf writer to print it" do
         writer.should_receive :write_to
-        Main.story 23
+        Main.story([23])
       end
     end
     describe ".current_iteration" do

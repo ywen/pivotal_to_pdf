@@ -4,9 +4,9 @@ require 'pivotal_to_pdf'
 require 'thor'
 
 class PivotalToPdfApp < Thor
-  desc "story STORY_ID", "print a single story specifed by ID into a PDF file. The card will have a color stripe. The color will be green for features, yellow for chores and red for bugs"
-  def story(story_id)
-    PivotalToPdf::Main.story story_id
+  desc "story [STORY_IDs]", "print one or more stories specifed by ID into a PDF file. The card will have a color stripe. The color will be green for features, yellow for chores and red for bugs"
+  def story(*story_ids)
+    PivotalToPdf::Main.story story_ids
   end
 
   desc "current_iteration", "print stories for the current iteration into a PDF file"

@@ -16,9 +16,9 @@ require 'pivotal_to_pdf/pt-workarounds'
 module PivotalToPdf
   class Main < Thor
     class << self
-      def story(story_id)
-        story = Story.find(story_id)
-        FormatterFactory.formatter.new([ story ]).write_to(story_id)
+      def story(story_ids)
+        stories = Story.find_stories(story_ids)
+        FormatterFactory.formatter.new(stories).write_to("stories")
       end
 
       def current_iteration
