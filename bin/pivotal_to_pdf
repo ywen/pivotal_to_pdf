@@ -4,9 +4,16 @@ require 'pivotal_to_pdf'
 require 'thor'
 
 class PivotalToPdfApp < Thor
+
   desc "story [STORY_IDs]", "print one or more stories specifed by ID into a PDF file. The card will have a color stripe. The color will be green for features, yellow for chores and red for bugs"
-  def story(story_ids)
-    PivotalToPdf::Main.story *story_ids
+  def story(*story_ids)
+    #what is the right way to accept 1 or more ids with Thor without using options?
+    if(story_ids.empty?)
+      puts 'ERROR: "pivotal_to_pdf story" was called with no arguments'
+      puts 'Usage: "pivotal_to_pdf story [STORY_IDs]"'
+      return
+    end
+    PivotalToPdf::Main.story story_ids
   end
 
   desc "current_iteration", "print stories for the current iteration into a PDF file"
