@@ -24,12 +24,12 @@ module PivotalToPdf
       include_examples "formatter fetching"
 
       it "initiates a story" do
-        Story.should_receive(:find_stories).with([23])
+        Story.should_receive(:find_stories).with([23]).and_return story
         Main.story([23])
       end
 
       it "initiates two stories" do
-        Story.should_receive(:find_stories).with([23, 55])
+        Story.should_receive(:find_stories).with([23, 55]).and_return story
         Main.story([23, 55])
       end
 
