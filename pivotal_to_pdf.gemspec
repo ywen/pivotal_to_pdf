@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency(%q<pivotal_to_pdf-formatters>, ">= 0.0.4")
   s.add_runtime_dependency(%q<activeresource>, "3.0.9")
   s.add_runtime_dependency(%q<prawn>, "0.12.0")
-  s.add_runtime_dependency(%q<rainbow>, ">= 2.0")
   s.add_runtime_dependency(%q<thor>, ">= 0")
   s.add_development_dependency(%q<rspec>)
   s.homepage = "https://github.com/ywen/pivotal_to_pdf"
