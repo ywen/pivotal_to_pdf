@@ -3,8 +3,12 @@ load File.expand_path(File.join(File.dirname(__FILE__), "..", "bin", "pivotal_to
 
 describe 'PivotalToPdf Bin' do
   context "when passed in story sub command" do
-    it "should call story" do
-      PivotalToPdf::Main.should_receive(:story).with(123)
+    it "should call story with more than one id" do
+      PivotalToPdf::Main.should_receive(:story).with([123,234,345])
+      PivotalToPdfApp.start(["story", 123, 234, 345])
+    end
+    it "should call story with one id" do
+      PivotalToPdf::Main.should_receive(:story).with([123])
       PivotalToPdfApp.start(["story", 123])
     end
     it "should not call story when no story id is given" do
