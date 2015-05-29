@@ -29,7 +29,7 @@ After install the gem, you can do:
 
 * pivotal_to_pdf current_iteration       # print stories for the current iteration into a PDF file
 
-* pivotal_to_pdf story STORY_ID  # print a single story specifed by ID into a PDF file
+* pivotal_to_pdf story STORY_ID, additional_story_ids  # print stories specifed by IDs into a PDF file
 
 * pivotal_to_pdf iteration ITERATION_NUMBER # print a single iteration specifed by the number into a PDF file
 
@@ -40,6 +40,8 @@ Examples:
 ```bash
 
 pivotal_to_pdf story 159898
+
+pivotal_to_pdf story 159898 159987
 
 pivotal_to_pdf current_iteration
 
@@ -96,3 +98,4 @@ to use the new formatters being added
 * [John-Mason P. Shackelford](https://github.com/jpshackelford)
 * [Bret Mogilefsky](https://github.com/mogul)
 * [Luke brown](https://github.com/tsdbrown)
+* [Scott Speidel](https://github.com/scottspeidel)
