@@ -13,7 +13,7 @@ GEM
     diff-lcs (1.2.5)
     i18n (0.5.4)
     pdf-core (0.5.1)
-    pivotal_to_pdf-formatters (0.2.1)
+    pivotal_to_pdf-formatters (0.2.1.1)
       rainbow
     prawn (2.0.1)
       pdf-core (~> 0.5.1)
