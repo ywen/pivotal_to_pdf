@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.author         = "Yi Wen"
   s.add_runtime_dependency(%q<pivotal_to_pdf-formatters>, ">= 0.0.4")
-  s.add_runtime_dependency(%q<activeresource>, "3.0.9")
+  s.add_runtime_dependency(%q<activeresource>, "5.1.1")
   s.add_runtime_dependency(%q<prawn>, "0.12.0")
   s.add_runtime_dependency(%q<thor>, ">= 0")
   s.add_development_dependency(%q<rspec>)

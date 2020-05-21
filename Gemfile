@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'activeresource', "3.0.9"
+gem 'activeresource', "5.1.1"
 gem 'prawn'
 gem 'thor'
 gem "pivotal_to_pdf-formatters", ">=0.0.4"
